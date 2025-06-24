@@ -1,5 +1,6 @@
 import React from 'react'
 import card_image from '../../assets/images/Mens/seven.jpg'
+import { Link } from 'react-router-dom'
 
 const FeaturedProducts = () => {
   return (
@@ -8,6 +9,7 @@ const FeaturedProducts = () => {
     
                 <div className="row justify-content-center">
                     <div className="col-12 col-md-6 col-lg-3">
+                        <Link to='/product'>
                         <div className="card product-card h-100">
                             <img
                                 src={card_image}
@@ -24,8 +26,10 @@ const FeaturedProducts = () => {
                                 </div>
                             </div>
                         </div>
+                        </Link>
                     </div>
                     <div className="col-12 col-md-6 col-lg-3">
+                        <Link to='/product'>
                         <div className="card product-card h-100">
                             <img
                                 src={card_image}
@@ -42,8 +46,10 @@ const FeaturedProducts = () => {
                                 </div>
                             </div>
                         </div>
+                        </Link>
                     </div>
                     <div className="col-12 col-md-6 col-lg-3">
+                        <Link to='/product'>
                         <div className="card product-card h-100">
                             <img
                                 src={card_image}
@@ -60,8 +66,10 @@ const FeaturedProducts = () => {
                                 </div>
                             </div>
                         </div>
+                        </Link>
                     </div>
                     <div className="col-12 col-md-6 col-lg-3">
+                        <Link to='/product'>
                         <div className="card product-card h-100">
                             <img
                                 src={card_image}
@@ -78,7 +86,9 @@ const FeaturedProducts = () => {
                                 </div>
                             </div>
                         </div>
+                        </Link>
                     </div>
+                    
                 </div>
             </div>
   )

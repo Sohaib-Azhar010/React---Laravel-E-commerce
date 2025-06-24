@@ -1,6 +1,7 @@
 import React from 'react'
 import Layout from './common/Layout'
-import card_image from '../assets/images/Mens/eight.jpg'
+import card_image from '../assets/images/Mens/five.jpg'
+import { Link } from 'react-router-dom'
 
 
 const Shop = () => {
@@ -12,7 +13,7 @@ const Shop = () => {
             <nav aria-label="breadcrumb">
               <ol className="breadcrumb mb-0">
                 <li className="breadcrumb-item">
-                  <a href="#" className="text-white text-decoration-none">Home</a>
+                  <Link to='/' className="text-white text-decoration-none" >Home</Link>
                 </li>
                 <li className="breadcrumb-item active text-white" aria-current="page">Shop</li>
               </ol>
@@ -48,113 +49,126 @@ const Shop = () => {
             <div className="col-md-9">
               <div className="row g-1">
                 <div className="col-12 col-md-6 col-lg-3">
-                  <div className="card product-card h-100">
-                    <img
-                      src={card_image}
-                      className="card-img-top product-img"
-                      alt="Classic Denim Jacket"
-                    />
-                    <div className="card-body d-flex flex-column justify-content-between">
-                      <div>
-                        <h5 className="card-title">Classic Denim Jacket</h5>
-                        <div className="price text-dark">
-                          $45 <span className="old-price">$55</span>
+                  <Link to='/product'>
+                    <div className="card product-card h-100">
+                      <img
+                        src={card_image}
+                        className="card-img-top product-img"
+                        alt="Classic Denim Jacket"
+                      />
+                      <div className="card-body d-flex flex-column justify-content-between">
+                        <div>
+                          <h5 className="card-title">Classic Denim Jacket</h5>
+                          <div className="price text-dark">
+                            $45
+                            <span className="old-price">$55</span>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </Link>
                 </div>
-
-                {/* Repeat more cards */}
                 <div className="col-12 col-md-6 col-lg-3">
-                  <div className="card product-card h-100">
-                    <img
-                      src={card_image}
-                      className="card-img-top product-img"
-                      alt="Classic Denim Jacket"
-                    />
-                    <div className="card-body d-flex flex-column justify-content-between">
-                      <div>
-                        <h5 className="card-title">Classic Denim Jacket</h5>
-                        <div className="price text-dark">
-                          $45 <span className="old-price">$55</span>
+                  <Link to='/product'>
+                    <div className="card product-card h-100">
+                      <img
+                        src={card_image}
+                        className="card-img-top product-img"
+                        alt="Classic Denim Jacket"
+                      />
+                      <div className="card-body d-flex flex-column justify-content-between">
+                        <div>
+                          <h5 className="card-title">Classic Denim Jacket</h5>
+                          <div className="price text-dark">
+                            $45
+                            <span className="old-price">$55</span>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </Link>
                 </div>
-
-                 <div className="col-12 col-md-6 col-lg-3">
-                  <div className="card product-card h-100">
-                    <img
-                      src={card_image}
-                      className="card-img-top product-img"
-                      alt="Classic Denim Jacket"
-                    />
-                    <div className="card-body d-flex flex-column justify-content-between">
-                      <div>
-                        <h5 className="card-title">Classic Denim Jacket</h5>
-                        <div className="price text-dark">
-                          $45 <span className="old-price">$55</span>
+                <div className="col-12 col-md-6 col-lg-3">
+                  <Link to='/product'>
+                    <div className="card product-card h-100">
+                      <img
+                        src={card_image}
+                        className="card-img-top product-img"
+                        alt="Classic Denim Jacket"
+                      />
+                      <div className="card-body d-flex flex-column justify-content-between">
+                        <div>
+                          <h5 className="card-title">Classic Denim Jacket</h5>
+                          <div className="price text-dark">
+                            $45
+                            <span className="old-price">$55</span>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </Link>
                 </div>
-
-                 <div className="col-12 col-md-6 col-lg-3">
-                  <div className="card product-card h-100">
-                    <img
-                      src={card_image}
-                      className="card-img-top product-img"
-                      alt="Classic Denim Jacket"
-                    />
-                    <div className="card-body d-flex flex-column justify-content-between">
-                      <div>
-                        <h5 className="card-title">Classic Denim Jacket</h5>
-                        <div className="price text-dark">
-                          $45 <span className="old-price">$55</span>
+                <div className="col-12 col-md-6 col-lg-3">
+                  <Link to='/product'>
+                    <div className="card product-card h-100">
+                      <img
+                        src={card_image}
+                        className="card-img-top product-img"
+                        alt="Classic Denim Jacket"
+                      />
+                      <div className="card-body d-flex flex-column justify-content-between">
+                        <div>
+                          <h5 className="card-title">Classic Denim Jacket</h5>
+                          <div className="price text-dark">
+                            $45
+                            <span className="old-price">$55</span>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </Link>
                 </div>
-
-                 <div className="col-12 col-md-6 col-lg-3">
-                  <div className="card product-card h-100">
-                    <img
-                      src={card_image}
-                      className="card-img-top product-img"
-                      alt="Classic Denim Jacket"
-                    />
-                    <div className="card-body d-flex flex-column justify-content-between">
-                      <div>
-                        <h5 className="card-title">Classic Denim Jacket</h5>
-                        <div className="price text-dark">
-                          $45 <span className="old-price">$55</span>
+                <div className="col-12 col-md-6 col-lg-3">
+                  <Link to='/product'>
+                    <div className="card product-card h-100">
+                      <img
+                        src={card_image}
+                        className="card-img-top product-img"
+                        alt="Classic Denim Jacket"
+                      />
+                      <div className="card-body d-flex flex-column justify-content-between">
+                        <div>
+                          <h5 className="card-title">Classic Denim Jacket</h5>
+                          <div className="price text-dark">
+                            $45
+                            <span className="old-price">$55</span>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </Link>
                 </div>
-
-                 <div className="col-12 col-md-6 col-lg-3">
-                  <div className="card product-card h-100">
-                    <img
-                      src={card_image}
-                      className="card-img-top product-img"
-                      alt="Classic Denim Jacket"
-                    />
-                    <div className="card-body d-flex flex-column justify-content-between">
-                      <div>
-                        <h5 className="card-title">Classic Denim Jacket</h5>
-                        <div className="price text-dark">
-                          $45 <span className="old-price">$55</span>
+                <div className="col-12 col-md-6 col-lg-3">
+                  <Link to='/product'>
+                    <div className="card product-card h-100">
+                      <img
+                        src={card_image}
+                        className="card-img-top product-img"
+                        alt="Classic Denim Jacket"
+                      />
+                      <div className="card-body d-flex flex-column justify-content-between">
+                        <div>
+                          <h5 className="card-title">Classic Denim Jacket</h5>
+                          <div className="price text-dark">
+                            $45
+                            <span className="old-price">$55</span>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </Link>
                 </div>
+                
 
 
 

@@ -60,6 +60,18 @@ ul{
 }
 
 .btn{
+    &.btn-size{
+        background-color: rgba($primary-black, 0.03);
+        border-color: rgba($primary-black, 0.05);
+        padding: 7px 15px;
+        &.active{
+            border-color:  rgba($primary-black, 0.20);;
+        }
+        &:hover{
+            border-color:  rgba($primary-black, 0.20);;
+            color: $primary-black;
+        }
+    }
     
     &.btn-primary{
         background-color: $primary-color;
@@ -82,5 +94,19 @@ ul{
             border-color: $primary-color;
             color: $primary-white;
         }
+    }
+}
+
+.product-detail{
+    .mySwiper{
+        .swiper-slide{
+            height: auto !important;
+        }
+    }
+}
+
+.nav-tabs{
+    .nav-link{
+        color: $primary-black;
     }
 }

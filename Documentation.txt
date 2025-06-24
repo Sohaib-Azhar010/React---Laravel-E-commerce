@@ -1,0 +1,103 @@
+=>For backend Laravel
+composer global require laravel/laravel backend
+
+after project creation backend>.env
+change databse to msql
+provide database name
+
+after that if you have mutliple roles
+goto database>migration in first file add another field
+
+            $table->enum('role',['customer','admin'])->default('customer');
+
+then migrate it
+
+also install intervention library for multiple images for products
+            composer require intervention/image
+
+--------------------------------------------------------------------------------
+=>For frontend React
+
+npm create vite@latest
+name project 
+select react
+select javascript
+
+then npm install 
+
+then necessary libraries
+npm i react-router-dom
+npm i react-hook-form
+npm i react-toastify (optional)
+npm i swiper (for multipe images / optional)
+
+-------------------------------------------------------------------------------
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Thumbs, FreeMode, Navigation  } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/free-mode';
+import 'swiper/css/navigation';
+import 'swiper/css/thumbs';
+
+const [thumbsSwiper, setThumbsSwiper] = useState(null);
+<Swiper
+    style={{
+        '--swiper-navigation-color': '#000',
+        '--swiper-pagination-color': '#000',
+        }}
+        onSwiper={setThumbsSwiper}
+        loop={true}
+        direction={`vertical`}
+        spaceBetween={10}
+        slidesPerView={6}
+        freeMode={true}
+        watchSlidesProgress={true}
+        modules={[FreeMode, Navigation, Thumbs]}
+        className="mySwiper mt-2"
+    >
+            
+    <SwiperSlide>
+        <div className='content'>
+            <img 
+                src={ProductImg} 
+                alt="" 
+                height={100}
+                className='w-100' />
+        </div>                                                                      
+    </SwiperSlide>
+</Swiper>
+
+<Swiper
+    style={{
+    '--swiper-navigation-color': '#000',
+    '--swiper-pagination-color': '#000',
+    }}
+    loop={true}
+    spaceBetween={0}
+    navigation={true}
+    thumbs={thumbsSwiper ? { swiper: thumbsSwiper } : undefined}
+    modules={[FreeMode, Navigation, Thumbs]}
+    className="mySwiper2"
+>
+    
+    <SwiperSlide >
+        <div className='content'>
+        <img 
+            src={ProductImg} 
+            alt="" 
+            className='w-100' />
+        </div>
+    </SwiperSlide>           
+</Swiper>
+---------------------------------------------------------------------------------
+
+
+for bootstrap
+npm install react-bootstrap bootstrap
+
+import bootstrap in main.jsx
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+for ratings
+npm i react-simple-star-rating
+
