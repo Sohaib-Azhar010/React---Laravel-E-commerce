@@ -1,0 +1,91 @@
+#mainCarousel {
+  height: 90vh; /* Adjust height as needed */
+  overflow: hidden;
+  position: relative;
+}
+
+/* Fixed height and responsive image */
+.carousel-img {
+  height: 100%;
+  min-height: 40vh;
+  width: 100%;
+  object-fit:fill;
+}
+
+/* Always center carousel control buttons vertically */
+.carousel-control-prev,
+.carousel-control-next {
+  display: none;
+}
+
+/* App.css */
+.product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.product-img {
+  height: 320px;
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #888;
+  font-size: 0.9rem;
+  margin-left: 8px;
+}
+
+footer a:hover {
+  color: #19cff0;
+  text-decoration: underline;
+}
+
+
+
+.bg-glossy-blue {
+  background: linear-gradient(135deg, #0d1b2a, #1b263b, #1e2f44);
+  background-size: 400% 400%;
+  animation: glossyShift 15s ease infinite;
+  box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Optional animation for shifting shine */
+@keyframes glossyShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+.breadcrumb {
+  --bs-breadcrumb-divider: '/';
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  color: white !important; /* force it to white */
+}
