@@ -1,19 +1,3 @@
-=>For backend Laravel
-composer global require laravel/laravel backend
-
-after project creation backend>.env
-change databse to msql
-provide database name
-
-after that if you have mutliple roles
-goto database>migration in first file add another field
-
-            $table->enum('role',['customer','admin'])->default('customer');
-
-then migrate it
-
-also install intervention library for multiple images for products
-            composer require intervention/image
 
 --------------------------------------------------------------------------------
 =>For frontend React
@@ -100,4 +84,38 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 for ratings
 npm i react-simple-star-rating
+
+-----------------------------------------------------------------------------------
+Form validation using react-from hook
+
+const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+
+ <div className="mb-3">
+              <label htmlFor="email" className="form-label fw-bold">Email</label>
+              <input
+              {
+                ...register("email",{
+                    required : "The email field is required"
+                })
+              }
+                type="email"
+                id="email"
+                className="form-control"
+                placeholder="Enter your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+              {
+                errors.email && <p>{errors.email}?.message</p>
+              }
+            </div>
+
+
+
 
