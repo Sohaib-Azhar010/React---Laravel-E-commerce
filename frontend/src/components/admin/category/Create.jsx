@@ -44,7 +44,7 @@ const Create = () => {
                 <h4 className="fw-bold mb-0">Create Category</h4>
                 <div>
                     <Link to="/admin/categories" className="btn btn-dark me-2">
-                        <i className="bi bi-arrow-left me-1"></i> Back to Categories
+                        <i className="bi bi-arrow-left me-1"></i> Back 
                     </Link>
                 </div>
             </div>

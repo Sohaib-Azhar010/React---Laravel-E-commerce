@@ -53,7 +53,7 @@ const ShowBrands = () => {
       <div className="d-flex justify-content-between align-items-center mb-4">
         <h4 className="fw-bold mb-0">Brands</h4>
         <Link to="/admin/brands/create" className="btn btn-primary">
-          <i className="bi bi-plus-circle me-1"></i> Create New Brand
+          <i className="bi bi-plus-circle me-1"></i> Create
         </Link>
       </div>
 

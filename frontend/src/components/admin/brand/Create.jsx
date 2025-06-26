@@ -45,7 +45,7 @@ const CreateBrand = () => {
       <div className="d-flex justify-content-between align-items-center mb-4">
         <h4 className="fw-bold mb-0">Create Brand</h4>
         <Link to="/admin/brands" className="btn btn-dark">
-          <i className="bi bi-arrow-left-circle me-1"></i> Back to Brands
+          <i className="bi bi-arrow-left-circle me-1"></i> Back 
         </Link>
       </div>
 

@@ -49,7 +49,7 @@ const AdminLayout = ({ children }) => {
             </Link>
           </li>
           <li className="nav-item mb-2">
-            <Link to="/admin/users" className="nav-link text-dark fw-semibold hover-effect">
+            <Link to="/admin/products" className="nav-link text-dark fw-semibold hover-effect">
               <i className="bi bi-box-seam me-2"></i>Products
             </Link>
           </li>
@@ -75,7 +75,7 @@ const AdminLayout = ({ children }) => {
           </li>
           <hr />
           <li className="nav-item mt-2">
-            <button className="btn btn-outline-white w-50" onClick={logout}>
+            <button className="btn btn-outline-white" onClick={logout}>
               <i className="bi bi-box-arrow-right me-2"></i>Logout
             </button>
           </li>

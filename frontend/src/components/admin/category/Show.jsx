@@ -54,7 +54,7 @@ const ShowCategories = () => {
             <div className="d-flex justify-content-between align-items-center mb-4">
                 <h4 className="fw-bold mb-0">Categories</h4>
                 <Link to="/admin/categories/create" className="btn btn-primary">
-                    <i className="bi bi-plus-circle me-1"></i> Create New Category
+                    <i className="bi bi-plus-circle me-1"></i> Create
                 </Link>
             </div>
 

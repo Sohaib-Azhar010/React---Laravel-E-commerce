@@ -20,7 +20,7 @@ return new class extends Migration
             $table->text('short_description')->nullable();
             $table->string('image')->nullable();
             $table->foreignId('category_id')->constrained()->onDelete('cascade');
-            $table->foreignId('brand_id')->constrained()->onDelete('cascade');
+            $table->foreignId('brand_id')->nullable()->constrained()->onDelete('cascade');
             $table->integer('qty')->nullable();
             $table->string('sku');
             $table->string('barcode');
