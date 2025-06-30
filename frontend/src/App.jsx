@@ -19,6 +19,8 @@ import EditBrand from './components/admin/brand/Edit';
 import ShowProducts from './components/admin/product/Show';
 import CreateProduct from './components/admin/product/Create';
 import EditProduct from './components/admin/product/Edit';
+import Contact from './components/Contact'
+import About from './components/About'
 
 
 
@@ -32,9 +34,11 @@ function App() {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/shop' element={<Shop />} />
-            <Route path='/product' element={<Product />} />
+            <Route path="/product/:id" element={<Product />} />
             <Route path='/cart' element={<Cart />} />
             <Route path='/checkout' element={<Checkout />} />
+            <Route path='/contact' element={<Contact />} />
+            <Route path='/about' element={<About />} />
             <Route path='/admin/login' element={<Login />} />
             <Route path='/admin/dashboard' element={
               <AdminRequireAuth>

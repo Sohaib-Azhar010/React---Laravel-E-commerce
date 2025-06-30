@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-     protected $fillable = [
+    protected $fillable = [
         'title',
         'price',
         'compare_price',
@@ -21,4 +21,9 @@ class Product extends Model
         'status',
         'is_featured',
     ];
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
 }

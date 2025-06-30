@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from './common/Layout'
 import { Link } from 'react-router-dom'
-import ProductImgOne from '../assets/images/Mens/seven.jpg'
+import ProductImgOne from '../assets/images/Mens/p2.jpg'
 
 const Cart = () => {
     return (

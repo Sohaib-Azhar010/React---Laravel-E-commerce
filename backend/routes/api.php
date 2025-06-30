@@ -6,6 +6,7 @@ use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\SizeController;
 use App\Http\Controllers\admin\TempImageController;
+use App\Http\Controllers\ReviewController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -27,7 +28,12 @@ Route::group(['milldeware' => 'auth:sanctum'], function () {
     Route::resource('brands', BrandController::class);
     Route::get('sizes', [SizeController::class, 'index']);
     Route::resource('products', ProductController::class);
+    Route::get('featured-products', [ProductController::class, 'featured']);
+    Route::get('shop', [ProductController::class, 'shop']);
     // Route::get('temp-images', [TempImageController::class, 'store']);
     Route::post('temp-images', [TempImageController::class, 'store']);
+
+    Route::post('/products/{id}/reviews', [ReviewController::class, 'store']);
+
 
 });

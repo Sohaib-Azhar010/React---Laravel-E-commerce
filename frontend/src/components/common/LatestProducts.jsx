@@ -1,5 +1,5 @@
 import React from 'react'
-import card_image from '../../assets/images/Mens/eight.jpg'
+import card_image from '../../assets/images/Mens/p1.jpg'
 import { Link } from 'react-router-dom'
 
 const LatestProducts = () => {

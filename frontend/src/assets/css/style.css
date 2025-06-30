@@ -89,3 +89,9 @@ footer a:hover {
 .breadcrumb-item + .breadcrumb-item::before {
   color: white !important; /* force it to white */
 }
+
+.navbar-nav .nav-link {
+  padding: 0 1rem;
+  font-weight: 500;
+  margin-left: 50px;
+}
