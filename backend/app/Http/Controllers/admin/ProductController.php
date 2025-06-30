@@ -10,10 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Arr;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Str;
-use Intervention\Image\ImageManager;
-use Intervention\Image\Drivers\Gd\Driver;
+
 
 class ProductController extends Controller
 {
@@ -55,70 +52,7 @@ class ProductController extends Controller
     }
 
 
-    // public function store(Request $request)
-    // {
-    //     $validator = Validator::make($request->all(), [
-    //         'title' => 'required|string|max:255',
-    //         'price' => 'required|numeric|min:0',
-    //         'category_id' => 'required|integer',
-    //         'sku' => 'required|string',
-    //         'status' => 'required|integer',
-    //         'is_featured' => 'required|in:yes,no',
-    //         'image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
-    //     ]);
-
-    //     if ($validator->fails()) {
-    //         return response()->json([
-    //             'status' => 400,
-    //             'errors' => $validator->errors(),
-    //         ]);
-    //     }
-
-    //     $data = $request->all();
-
-
-    //     $product = Product::create($data);
-
-
-    //     if (!empty($request->gallery)) {
-    //         foreach ($request->gallery as $key => $tempImageId) {
-    //             $tempImg = TempImage::find($tempImageId);
-
-    //             if (!$tempImg) continue;
-
-    //             // Determine extension
-    //             $extArray = explode('.', $tempImg->name);
-    //             $ext = end($extArray);
-    //             $imageName = $product->id . '.' . $ext;
-
-    //             $manager = new ImageManager(new Driver());
-
-    //             // Large image
-    //             $img = $manager->read(public_path("uploads/temp/{$tempImg->name}"));
-    //             $img->scaleDown(1200);
-    //             $img->save(public_path("uploads/products/large/{$imageName}"));
-
-    //             // Small thumb
-    //             $img = $manager->read(public_path("uploads/temp/{$tempImg->name}"));
-    //             $img->coverDown(400, 460);
-    //             $img->save(public_path("uploads/products/small/{$imageName}"));
-
-    //             if ($key === 0) {
-    //                 $product->image = $imageName;
-    //                 $product->save();
-    //             }
-    //         }
-    //     }
-
-
-
-    //     return response()->json([
-    //         'status' => 200,
-    //         'message' => 'Product created successfully',
-    //         'data' => $product,
-    //     ]);
-    // }
-
+   
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
