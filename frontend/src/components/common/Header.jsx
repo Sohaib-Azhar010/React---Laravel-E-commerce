@@ -14,7 +14,7 @@ const Header = () => {
 
       <header className='shadow'>
         <div className='bg-glossy-blue text-center py-3'>
-          <span className='text-white'>Your Fashion Partner</span>
+          <span className='text-white'>Freshen Your Soul With Scentio</span>
         </div>
       </header>
 
