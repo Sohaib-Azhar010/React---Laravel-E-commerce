@@ -34,8 +34,23 @@ const EditProduct = () => {
         fetch(`${apiUrl}/products/${id}`)
             .then((res) => res.json())
             .then((res) => {
-                if (res.status === 200) {
-                    setForm(res.data);
+                console.log(res); // ✅ optional debug
+                if (res.status === 200 && res.data) {
+                    const product = res.data.product;
+                    setForm({
+                        title: product.title || '',
+                        price: product.price || '',
+                        compare_price: product.compare_price || '',
+                        description: product.description || '',
+                        short_description: product.short_description || '',
+                        category_id: product.category_id || '',
+                        brand_id: product.brand_id || '',
+                        qty: product.qty || '',
+                        sku: product.sku || '',
+                        barcode: product.barcode || '',
+                        status: product.status !== undefined ? product.status : 1,
+                        is_featured: product.is_featured || 'no',
+                    });
                 } else {
                     toast.error(res.message || 'Failed to load product data');
                 }
@@ -56,42 +71,42 @@ const EditProduct = () => {
     };
 
     const handleSubmit = async (e) => {
-    e.preventDefault();
+        e.preventDefault();
 
-    const data = new FormData();
-    for (const key in form) {
-        if (form[key] !== null && form[key] !== undefined && key !== 'image') {
-            data.append(key, form[key]);
+        const data = new FormData();
+        for (const key in form) {
+            if (form[key] !== null && form[key] !== undefined && key !== 'image') {
+                data.append(key, form[key]);
+            }
         }
-    }
 
-    // ✅ Only append image if a new file is selected
-    if (imageFile) {
-        data.append("image", imageFile);
-    }
-
-    try {
-        const res = await fetch(`${apiUrl}/products/${id}`, {
-            method: 'POST',
-            headers: {
-                Accept: 'application/json',
-                'X-HTTP-Method-Override': 'PUT',
-            },
-            body: data,
-        });
-
-        const result = await res.json();
-
-        if (result.status === 200) {
-            toast.success(result.message);
-            navigate('/admin/products');
-        } else {
-            toast.error(result.message || 'Failed to update product');
+        // ✅ Only append image if a new file is selected
+        if (imageFile) {
+            data.append("image", imageFile);
         }
-    } catch (error) {
-        toast.error('Something went wrong');
-    }
-};
+
+        try {
+            const res = await fetch(`${apiUrl}/products/${id}`, {
+                method: 'POST',
+                headers: {
+                    Accept: 'application/json',
+                    'X-HTTP-Method-Override': 'PUT',
+                },
+                body: data,
+            });
+
+            const result = await res.json();
+
+            if (result.status === 200) {
+                toast.success(result.message);
+                navigate('/admin/products');
+            } else {
+                toast.error(result.message || 'Failed to update product');
+            }
+        } catch (error) {
+            toast.error('Something went wrong');
+        }
+    };
 
 
 

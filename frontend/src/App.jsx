@@ -21,6 +21,7 @@ import CreateProduct from './components/admin/product/Create';
 import EditProduct from './components/admin/product/Edit';
 import Contact from './components/Contact'
 import About from './components/About'
+import '../src/assets/css/app.css'
 
 
 

@@ -12,7 +12,6 @@ class Product extends Model
         'compare_price',
         'description',
         'short_description',
-        'image',
         'category_id',
         'brand_id',
         'qty',
@@ -20,7 +19,9 @@ class Product extends Model
         'barcode',
         'status',
         'is_featured',
+        'image',
     ];
+
 
     public function reviews()
     {

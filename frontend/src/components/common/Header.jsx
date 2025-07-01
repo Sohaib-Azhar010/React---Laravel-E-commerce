@@ -6,6 +6,12 @@ import '../../assets/css/style.css'
 const Header = () => {
   return (
     <>
+      <div className="animated-bg">
+        <div className="blob"></div>
+        <div className="blob"></div>
+        <div className="blob"></div>
+      </div>
+
       <header className='shadow'>
         <div className='bg-glossy-blue text-center py-3'>
           <span className='text-white'>Your Fashion Partner</span>

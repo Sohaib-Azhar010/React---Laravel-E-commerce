@@ -52,7 +52,7 @@ class ProductController extends Controller
     }
 
 
-   
+
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -252,6 +252,18 @@ class ProductController extends Controller
         return response()->json([
             'status' => 200,
             'data' => $products,
+        ]);
+    }
+
+    public function latest()
+    {
+        $products = Product::orderBy('created_at', 'desc')
+            ->take(4)
+            ->get();
+
+        return response()->json([
+            'status' => 200,
+            'data' => $products
         ]);
     }
 }

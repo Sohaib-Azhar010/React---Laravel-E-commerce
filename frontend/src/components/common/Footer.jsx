@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 const Footer = () => {
   return (
     <>
-     <footer className="bg-glossy-blue text-white p-5 mt-5">
+     <footer className="bg-glossy-blue text-white p-5 ">
       <div className="container">
         <div className="row text-center text-md-start">
           {/* Brand & Slogan */}
@@ -45,7 +45,7 @@ const Footer = () => {
 
         <hr className="border-secondary" />
         <div className="text-center small text-white">
-          &copy; {new Date().getFullYear()} Pure Wear. All rights reserved.
+          &copy; {new Date().getFullYear()} Scentio. All rights reserved.
         </div>
       </div>
     </footer>
