@@ -50,6 +50,7 @@ const EditProduct = () => {
                         barcode: product.barcode || '',
                         status: product.status !== undefined ? product.status : 1,
                         is_featured: product.is_featured || 'no',
+                        image : product.image || 'no image found',
                     });
                 } else {
                     toast.error(res.message || 'Failed to load product data');
@@ -188,7 +189,7 @@ const EditProduct = () => {
                                 <label className="form-label">Description</label>
                                 <textarea name="description" className="form-control" value={form.description || ''} onChange={handleChange}></textarea>
                             </div>
-                            <div className="col-12">
+                            <div className="col-10">
                                 <label className="form-label">Image</label>
                                 <input
                                     type="file"
@@ -196,7 +197,9 @@ const EditProduct = () => {
                                     name="image"
                                     onChange={(e) => setImageFile(e.target.files[0])}
                                 />
-                                {/* {form.image && (
+                            </div>
+                            <div className="col-2">
+                                {form.image && (
                                     <div className="mb-2">
                                         <img
                                             src={`${apiUrl.replace('/api', '')}/uploads/products/small/${form.image}`}
@@ -204,9 +207,7 @@ const EditProduct = () => {
                                             width={100}
                                         />
                                     </div>
-                                )} */}
-
-
+                                )}
                             </div>
 
                             <div className="col-12 text-end">

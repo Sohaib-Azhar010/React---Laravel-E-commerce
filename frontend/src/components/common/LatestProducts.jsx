@@ -26,10 +26,11 @@ const LatestProducts = () => {
       <h2 className="text-center mb-4">New Arrivals</h2>
       <div className="row justify-content-center">
         {products.map(product => (
-          <div key={product.id} className="col-12 col-md-6 col-lg-3 mb-4">
+          <div key={product.id} className="col-12 col-md-6 col-lg-3 mb-4" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
             <Link to={`/product/${product.id}`}>
               <div className="card product-card h-100">
                 <img
+                  loading='lazy'
                   src={`${baseUrl}/uploads/products/small/${product.image}`}
                   className="card-img-top product-img"
                   alt={product.title}

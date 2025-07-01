@@ -72,7 +72,7 @@ const ShowProducts = () => {
                                     <td>{product.id}</td>
                                     <td>
                                         {product.image ? (
-                                            <img src={`${baseUrl}/uploads/products/small/${product.image}`} alt={product.title} width={30} />
+                                            <img loading='lazy' src={`${baseUrl}/uploads/products/small/${product.image}`} alt={product.title} width={30} height={35} />
 
 
                                         ) : (

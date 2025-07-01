@@ -25,7 +25,7 @@ const ExploreSection = () => {
               Scentio is your one-stop multi-brand, multi-category shopping destination.
               Discover quality, variety, and value – all in one elegant platform.
             </p>
-            <Link to="/shop" className="btn btn-primary px-4 py-2 mt-5 w-100">
+            <Link to="/shop" className="btn btn-primary px-4 py-2 mt-5 w-100" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
               Explore Products
             </Link>
           </div>

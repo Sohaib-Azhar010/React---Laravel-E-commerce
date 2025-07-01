@@ -24,6 +24,8 @@
   border: none;
   border-radius: 12px;
   overflow: hidden;
+  background: none;
+  background-color: transparent;
 }
 
 .product-card:hover {

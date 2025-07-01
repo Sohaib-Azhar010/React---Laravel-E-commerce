@@ -30,10 +30,11 @@ const FeaturedProducts = () => {
             <h2 className="text-center mb-4">Featured Products</h2>
             <div className="row justify-content-center">
                 {products.map(product => (
-                    <div className="col-12 col-md-6 col-lg-3 mb-4" key={product.id}>
+                    <div className="col-12 col-md-6 col-lg-3 mb-4" key={product.id} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
                         <Link to={`/product/${product.id}`}>
                             <div className="card product-card h-100">
                                 <img
+                                    loading='lazy'
                                     src={`${baseUrl}/uploads/products/small/${product.image}`}
                                     className="card-img-top product-img"
                                     alt={product.title}
