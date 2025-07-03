@@ -17,17 +17,17 @@ const Footer = () => {
           <div className="col-md-3 mb-4">
             <h5 className="fw-bold">Pages</h5>
             <ul className="list-unstyled">
-              <li> <Link to={'/'}><a href="" className="text-white text-decoration-none">Home</a></Link> </li>
-              <li> <Link to={'/shop'}><a href="" className="text-white text-decoration-none">Shop</a></Link></li>
-              <li> <Link to={'/contact'}><a href="" className="text-white text-decoration-none">Contact</a></Link></li>
-              <li> <Link to={'/about'}><a href="" className="text-white text-decoration-none">About Us</a></Link></li>
+              <li> <Link className="text-white text-decoration-none" to={'/'}>Home</Link> </li>
+              <li> <Link className="text-white text-decoration-none" to={'/shop'}>Shop</Link></li>
+              <li> <Link className="text-white text-decoration-none" to={'/contact'}>Contact</Link></li>
+              <li> <Link className="text-white text-decoration-none" to={'/about'}>About Us</Link></li>
             </ul>
           </div>
 
           <div className="col-md-3 mb-4">
             <h5 className="fw-bold">Quick Links</h5>
             <ul className="list-unstyled">
-              <li><Link to={'/admin/login'}><a href="" className="text-white text-decoration-none">Admin</a></Link> </li>
+              <li><Link className="text-white text-decoration-none" to={'/admin/login'}>Admin</Link> </li>
             </ul>
           </div>
 

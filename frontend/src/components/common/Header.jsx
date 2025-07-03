@@ -48,16 +48,16 @@ const Header = () => {
             {/* Center: Nav Links */}
             <ul className="navbar-nav me-auto mb-2 mb-lg-0 mx-lg-auto text-center">
               <li className="nav-item">
-                <Link to={'/'} ><a className="nav-link" href="#">Home</a></Link>
+                <Link className="nav-link" to={'/'} >Home</Link>
               </li>
               <li className="nav-item">
-                <Link to={'/shop'}><a className="nav-link" href="#">Shop</a> </Link>
+                <Link className="nav-link" to={'/shop'}>Shop</Link>
               </li>
               <li className="nav-item">
-                <Link to={'/contact'}><a className="nav-link" href="#">Contact</a></Link>
+                <Link className="nav-link" to={'/contact'}>Contact</Link>
               </li>
               <li className="nav-item">
-                <Link to={'/about'}><a className="nav-link" href="#">About Us</a></Link>
+                <Link className="nav-link" to={'/about'}>About Us</Link>
               </li>
             </ul>
 
