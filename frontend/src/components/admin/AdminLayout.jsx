@@ -54,25 +54,31 @@ const AdminLayout = ({ children }) => {
             </Link>
           </li>
           <li className="nav-item mb-2">
-            <Link to="/admin/users" className="nav-link text-dark fw-semibold hover-effect">
+            <Link to="" className="nav-link text-dark fw-semibold hover-effect">
               <i className="bi bi-bag-check me-2"></i>Orders
             </Link>
           </li>
           <li className="nav-item mb-2">
-            <Link to="/admin/users" className="nav-link text-dark fw-semibold hover-effect">
-              <i className="bi bi-people me-2"></i>Users
-            </Link>
-          </li>
-          <li className="nav-item mb-2">
-            <Link to="/admin/users" className="nav-link text-dark fw-semibold hover-effect">
+            <Link to="" className="nav-link text-dark fw-semibold hover-effect">
               <i className="bi bi-truck me-2"></i>Shipping
             </Link>
           </li>
           <li className="nav-item mb-2">
-            <Link to="/admin/users" className="nav-link text-dark fw-semibold hover-effect">
-              <i className="bi bi-key me-2"></i>Change Password
+            <Link to="" className="nav-link text-dark fw-semibold hover-effect">
+              <i className="bi bi-cash me-2"></i>Sales
             </Link>
           </li>
+          <li className="nav-item mb-2">
+            <Link to="" className="nav-link text-dark fw-semibold hover-effect">
+              <i className="bi bi-people me-2"></i>Subscribers
+            </Link>
+          </li>
+          <li className="nav-item mb-2">
+            <Link to="" className="nav-link text-dark fw-semibold hover-effect">
+              <i className="bi bi-envelope me-2"></i>Messages
+            </Link>
+          </li>
+          
           <hr />
           <li className="nav-item mt-2">
             <button className="btn btn-outline-white" onClick={logout}>
