@@ -24,7 +24,7 @@ const PaymentSuccess = () => {
     <Layout>
       <div className="container text-center mt-5">
         <div className="">
-          <h2 className="text-dark mb-3">🎉 Payment Successful!</h2>
+          <h2 className="text-dark mb-3"> <i class="bi bi-check-circle mx-3"></i> Payment Successful!</h2>
           <p className="text-muted">
             Thank you for your purchase. Your order has been processed successfully.
           </p>

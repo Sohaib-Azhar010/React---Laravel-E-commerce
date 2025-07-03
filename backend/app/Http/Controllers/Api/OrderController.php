@@ -82,6 +82,8 @@ class OrderController extends Controller
                 'cancel_url' => $frontendUrl . '/payment-cancel',
             ]);
 
+             Mail::to($order->email)->send(new OrderConfirmation($order));
+
             return response()->json(['sessionId' => $session->id]);
         }
 
