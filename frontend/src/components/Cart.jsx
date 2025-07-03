@@ -2,10 +2,13 @@ import React, { useEffect, useState } from 'react';
 import Layout from './common/Layout';
 import { Link } from 'react-router-dom';
 import { getCart, saveCart, removeFromCart } from './utils/cart';
+import { useNavigate } from 'react-router-dom';
+
 
 
 const Cart = () => {
     const [cartItems, setCartItems] = useState({});
+    const navigate = useNavigate();
 
     useEffect(() => {
         const items = getCart();
@@ -32,6 +35,16 @@ const Cart = () => {
     const total = subtotal + shipping;
 
 
+    const handleProceedToCheckout = () => {
+        navigate('/checkout', {
+            state: {
+                items: cartArray,
+                subtotal,
+                shipping,
+                total,
+            },
+        });
+    };
 
     return (
         <Layout>
@@ -139,7 +152,7 @@ const Cart = () => {
                                     <span>${total.toFixed(2)}</span>
                                 </div>
 
-                                <button className="btn btn-primary w-100">
+                                <button className="btn btn-primary w-100" onClick={handleProceedToCheckout}>
                                     Proceed to Checkout
                                 </button>
                             </div>

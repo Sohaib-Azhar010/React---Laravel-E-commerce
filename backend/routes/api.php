@@ -6,15 +6,13 @@ use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\SizeController;
 use App\Http\Controllers\admin\TempImageController;
+use App\Http\Controllers\Api\OrderController;
 use App\Http\Controllers\ReviewController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
 
-Route::post('/cart/add/{id}', [CartController::class, 'addToCart']);
-Route::get('/cart', [CartController::class, 'getCart']);
-Route::delete('/cart/remove/{id}', [CartController::class, 'removeFromCart']);
-Route::post('/cart/clear', [CartController::class, 'clearCart']);
+
 
 
 
@@ -38,7 +36,5 @@ Route::group(['milldeware' => 'auth:sanctum'], function () {
 });
 
 
-Route::post('/cart/add/{id}', [CartController::class, 'addToCart']);
-Route::get('/cart', [CartController::class, 'getCart']);
-Route::delete('/cart/remove/{id}', [CartController::class, 'removeFromCart']);
-Route::post('/cart/clear', [CartController::class, 'clearCart']);
+
+Route::post('/order', [OrderController::class, 'store']);

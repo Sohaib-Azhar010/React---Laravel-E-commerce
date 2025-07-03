@@ -14,10 +14,15 @@ export const CartProvider = ({ children }) => {
     setCartCount(totalItems);
   };
 
+  const clearCart = () => {
+    localStorage.removeItem("cartItems");
+    setCartItems([]); // ← this updates the context state, which causes re-render
+  };
+
   useEffect(() => {
     updateCartCount();
     window.addEventListener('cartUpdated', updateCartCount);
-    return () => window.removeEventListener('cartUpdated', updateCartCount);
+    return () => window.removeEventListener('cartUpdated', updateCartCount , clearCart);
   }, []);
 
   return (

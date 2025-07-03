@@ -1,11 +1,10 @@
-import { apiUrl } from '../common/http';
+import { apiUrl } from "../common/http";
 
 const baseUrl = apiUrl?.replace("/api", "") || "";
 
-
 export const saveCart = (cart) => {
-  localStorage.setItem('cart', JSON.stringify(cart));
-  window.dispatchEvent(new Event('cartUpdated'));
+  localStorage.setItem("cart", JSON.stringify(cart));
+  window.dispatchEvent(new Event("cartUpdated"));
 };
 
 // Get cart from localStorage
@@ -15,7 +14,6 @@ export const getCart = () => {
 };
 
 // Save cart to localStorage
-
 
 // Add product to cart
 export const addToCart = (product) => {
@@ -44,11 +42,14 @@ export const addToCart = (product) => {
 // Remove item from cart
 export const removeFromCart = (id) => {
   const cart = getCart();
-  delete cart[id];              // ✅ Removes the item from object
-  saveCart(cart);               // ✅ Saves updated cart to localStorage
+  delete cart[id]; // ✅ Removes the item from object
+  saveCart(cart); // ✅ Saves updated cart to localStorage
 };
 
 // Clear entire cart
+// export const clearCart = () => {
+//   localStorage.removeItem("cart");
+// };
 export const clearCart = () => {
   localStorage.removeItem("cart");
 };

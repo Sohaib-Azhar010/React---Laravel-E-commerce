@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import '../../assets/css/style.css';
+import { toast } from 'react-toastify';
 
 const Newsletter = () => {
   const [email, setEmail] = useState('');
 
   const handleSubscribe = (e) => {
     e.preventDefault();
-    alert(`Subscribed with: ${email}`);
+    toast(`Subscribed with: ${email}`);
     setEmail('');
   };
 

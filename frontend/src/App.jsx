@@ -23,6 +23,8 @@ import Contact from './components/Contact'
 import About from './components/About'
 import '../src/assets/css/app.css'
 import { CartProvider } from './components/context/CartContext'
+import PaymentSuccess from './components/PaymentSuccess'
+import PaymentCancel from './components/PaymentCancel'
 
 
 
@@ -43,6 +45,8 @@ function App() {
               <Route path='/contact' element={<Contact />} />
               <Route path='/about' element={<About />} />
               <Route path='/admin/login' element={<Login />} />
+              <Route path="/payment-success" element={<PaymentSuccess />} />
+              <Route path="/payment-cancel" element={<PaymentCancel />} />
               <Route path='/admin/dashboard' element={
                 <AdminRequireAuth>
                   <Dashboard />
