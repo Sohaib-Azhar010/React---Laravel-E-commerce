@@ -12,6 +12,7 @@ import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import { apiUrl } from '../components/common/http';
 import { toast } from 'react-toastify';
+import { addToCart } from './utils/cart';
 
 const Product = () => {
   const { id } = useParams();
@@ -39,7 +40,7 @@ const Product = () => {
         return res.json();
       })
       .then((data) => {
-        console.log('Fetched product:', data); // ✅ debug
+        // console.log('Fetched product:', data);
 
         if (data.status === 200 && data.data?.product) {
           setProduct(data.data.product);
@@ -98,6 +99,18 @@ const Product = () => {
   };
 
 
+  const handleAddToCart = () => {
+    if (!product) return;
+
+    addToCart(product);
+    toast.success('Product added to cart!');
+  };
+
+
+
+
+
+
   return (
     <Layout>
       <div className="container px-5">
@@ -138,7 +151,7 @@ const Product = () => {
                       <SwiperSlide key={index}>
                         <div className='content'>
                           <img
-                            src={`${baseUrl}/uploads/products/${img.image}`}
+                            src={`${baseUrl}/uploads/products/large/${img.image}`}
                             alt=""
                             className='w-100'
 
@@ -149,7 +162,7 @@ const Product = () => {
                   ) : (
                     <SwiperSlide>
                       <img
-                        src={`${baseUrl}/uploads/products/small/${product.image}`}
+                        src={`${baseUrl}/uploads/products/large/${product.image}`}
                         className="w-100 img-fluid object-fit-contain"
                         alt={product.title}
                         style={{ maxHeight: '500px' }}
@@ -183,9 +196,10 @@ const Product = () => {
               {product.short_description || 'No description available'}
             </div>
 
-            <div className="add-to-cart mt-5">
-              <button className='btn btn-primary text-uppercase'>Add to Cart</button>
-            </div>
+            <button onClick={handleAddToCart} className='btn btn-primary text-uppercase mt-5'>
+              Add to Cart
+            </button>
+
 
             <hr />
             <p>SKU: {product.sku || 'N/A'}</p>

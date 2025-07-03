@@ -2,8 +2,10 @@ import React from 'react'
 import logo from '../../assets/images/logo.png'
 import { Link } from 'react-router-dom'
 import '../../assets/css/style.css'
+import { useCart } from '../context/CartContext';
 
 const Header = () => {
+  const { cartCount } = useCart();
   return (
     <>
       <div className="animated-bg">
@@ -69,7 +71,7 @@ const Header = () => {
                   className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark"
                   style={{ fontSize: '0.65rem', padding: '4px 6px' }}
                 >
-                  0
+                  {cartCount}
                 </span>
               </Link>
 
