@@ -25,6 +25,8 @@ import '../src/assets/css/app.css'
 import { CartProvider } from './components/context/CartContext'
 import PaymentSuccess from './components/PaymentSuccess'
 import PaymentCancel from './components/PaymentCancel'
+import OrderShow from './components/admin/order/Show'
+import ShowShipped from './components/admin/shipped/ShowShipped'
 
 
 
@@ -52,8 +54,6 @@ function App() {
                   <Dashboard />
                 </AdminRequireAuth>
               } />
-
-
               <Route path='/admin/categories' element={
                 <AdminRequireAuth>
                   <ShowCategories />
@@ -97,6 +97,18 @@ function App() {
               <Route path='/admin/products/edit/:id' element={
                 <AdminRequireAuth>
                   <EditProduct />
+                </AdminRequireAuth>
+              } />
+
+              <Route path='/admin/orders' element={
+                <AdminRequireAuth>
+                  <OrderShow />
+                </AdminRequireAuth>
+              } />
+
+              <Route path='/admin/shipped' element={
+                <AdminRequireAuth>
+                  <ShowShipped />
                 </AdminRequireAuth>
               } />
 

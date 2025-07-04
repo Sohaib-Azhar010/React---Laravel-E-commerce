@@ -12,9 +12,19 @@ use Illuminate\Support\Facades\Log;
 use Stripe\PaymentIntent;
 use Stripe\Stripe;
 use Stripe\Checkout\Session;
+use App\Models\Shipped;
+use Barryvdh\DomPDF\Facade\Pdf;
+
 
 class OrderController extends Controller
 {
+
+    public function index()
+    {
+        $orders = Order::with('items')->orderBy('created_at', 'desc')->get();
+        return response()->json($orders);
+    }
+
     public function store(Request $request)
     {
         $frontendUrl = config('app.frontend_url');
@@ -82,7 +92,7 @@ class OrderController extends Controller
                 'cancel_url' => $frontendUrl . '/payment-cancel',
             ]);
 
-             Mail::to($order->email)->send(new OrderConfirmation($order));
+            Mail::to($order->email)->send(new OrderConfirmation($order));
 
             return response()->json(['sessionId' => $session->id]);
         }
@@ -97,5 +107,51 @@ class OrderController extends Controller
             'message' => 'Order placed successfully.',
             'order_id' => $order->id
         ]);
+    }
+
+    public function updateStatus($id, Request $request)
+    {
+        $order = Order::findOrFail($id);
+        $order->payment_status = $request->status;
+        $order->save();
+
+        return response()->json(['message' => 'Status updated']);
+    }
+
+    public function markShipped($id)
+    {
+        $order = Order::with('items')->findOrFail($id);
+
+        foreach ($order->items as $item) {
+            $exists = Shipped::where('order_id', $order->id)
+                ->where('order_item_id', $item->id)
+                ->exists();
+
+            if (!$exists) {
+                Shipped::create([
+                    'order_id' => $order->id,
+                    'order_item_id' => $item->id,
+                ]);
+            }
+        }
+
+
+        return response()->json(['message' => 'Marked as shipped']);
+    }
+
+    public function getShipped()
+    {
+        $shippeds = Shipped::with(['order', 'orderItem'])->latest()->get();
+        return response()->json($shippeds);
+    }
+
+
+    public function downloadReceipt($id)
+    {
+        $order = Order::with('items')->findOrFail($id);
+
+        $pdf = PDF::loadView('pdf.receipt', compact('order'));
+
+        return $pdf->download('receipt_' . $order->id . '.pdf');
     }
 }

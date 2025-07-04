@@ -33,6 +33,15 @@ Route::group(['milldeware' => 'auth:sanctum'], function () {
     Route::get('shop', [ProductController::class, 'shop']);
     Route::post('temp-images', [TempImageController::class, 'store']);
     Route::post('/products/{id}/reviews', [ReviewController::class, 'store']);
+    Route::get('/orders', [OrderController::class, 'index']);
+    Route::put('/orders/{id}/status', [OrderController::class, 'updateStatus']);
+    Route::get('/orders/{id}/receipt', [OrderController::class, 'downloadReceipt']);
+    Route::post('/orders/{id}/ship', [OrderController::class, 'markShipped']);
+    Route::get('/shippeds', [OrderController::class, 'getShipped']);
+
+
+
+
 });
 
 

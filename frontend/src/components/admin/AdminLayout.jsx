@@ -54,12 +54,12 @@ const AdminLayout = ({ children }) => {
             </Link>
           </li>
           <li className="nav-item mb-2">
-            <Link to="" className="nav-link text-dark fw-semibold hover-effect">
+            <Link to="/admin/orders" className="nav-link text-dark fw-semibold hover-effect">
               <i className="bi bi-bag-check me-2"></i>Orders
             </Link>
           </li>
           <li className="nav-item mb-2">
-            <Link to="" className="nav-link text-dark fw-semibold hover-effect">
+            <Link to="/admin/shipped" className="nav-link text-dark fw-semibold hover-effect">
               <i className="bi bi-truck me-2"></i>Shipping
             </Link>
           </li>
