@@ -29,6 +29,7 @@ import OrderShow from './components/admin/order/Show'
 import ShowShipped from './components/admin/shipped/ShowShipped'
 import ShowNewsletter from './components/admin/newsletter/ShowNewsletter'
 import ShowContact from './components/admin/contact/ShowContact'
+import ShowSales from './components/admin/sales/ShowSales'
 
 
 
@@ -123,6 +124,12 @@ function App() {
               <Route path='/admin/contacts' element={
                 <AdminRequireAuth>
                   <ShowContact />
+                </AdminRequireAuth>
+              } />
+
+              <Route path='/admin/sales' element={
+                <AdminRequireAuth>
+                  <ShowSales />
                 </AdminRequireAuth>
               } />
 

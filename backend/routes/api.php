@@ -46,6 +46,8 @@ Route::group(['milldeware' => 'auth:sanctum'], function () {
     Route::get('/admin/contacts', [ContactController::class, 'index']);
     Route::delete('/admin/contacts/{id}', [ContactController::class, 'destroy']);
     Route::get('/dashboard-metrics', [DashboardController::class, 'metrics']);
+    Route::get('/dashboard-sales', [DashboardController::class, 'salesData']);
+
 });
 
 Route::post('/contact', [ContactController::class, 'store']);
