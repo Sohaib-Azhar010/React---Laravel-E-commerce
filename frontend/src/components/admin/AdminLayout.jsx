@@ -69,7 +69,7 @@ const AdminLayout = ({ children }) => {
             </Link>
           </li>
           <li className="nav-item mb-2">
-            <Link to="" className="nav-link text-dark fw-semibold hover-effect">
+            <Link to="/admin/newsletters" className="nav-link text-dark fw-semibold hover-effect">
               <i className="bi bi-people me-2"></i>Subscribers
             </Link>
           </li>

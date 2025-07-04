@@ -11,6 +11,7 @@ use App\Http\Controllers\ReviewController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\Api\NewsletterController;
 
 
 
@@ -38,12 +39,11 @@ Route::group(['milldeware' => 'auth:sanctum'], function () {
     Route::get('/orders/{id}/receipt', [OrderController::class, 'downloadReceipt']);
     Route::post('/orders/{id}/ship', [OrderController::class, 'markShipped']);
     Route::get('/shippeds', [OrderController::class, 'getShipped']);
-
-
-
-
+    Route::get('/newsletters', [NewsletterController::class, 'index']);
+    Route::delete('/newsletters/{id}', [NewsletterController::class, 'destroy']);
 });
 
 
+Route::post('/newsletter', [NewsletterController::class, 'store']);
 
 Route::post('/order', [OrderController::class, 'store']);

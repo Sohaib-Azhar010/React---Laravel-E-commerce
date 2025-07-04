@@ -1,15 +1,35 @@
 import React, { useState } from 'react';
 import '../../assets/css/style.css';
 import { toast } from 'react-toastify';
+import { apiUrl } from './http';
 
 const Newsletter = () => {
   const [email, setEmail] = useState('');
 
-  const handleSubscribe = (e) => {
+  const handleSubscribe = async (e) => {
     e.preventDefault();
-    toast(`Subscribed with: ${email}`);
-    setEmail('');
+
+    try {
+      const res = await fetch(`${apiUrl}/newsletter`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      if (!res.ok) {
+        const errorData = await res.json();
+        throw new Error(errorData.message || 'Subscription failed.');
+      }
+
+      toast.success(`Subscribed with: ${email}`);
+      setEmail('');
+    } catch (error) {
+      toast.error(error.message);
+    }
   };
+
 
   return (
     <div className="newsletter-section">
