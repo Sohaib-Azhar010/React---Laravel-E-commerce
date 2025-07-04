@@ -28,6 +28,7 @@ import PaymentCancel from './components/PaymentCancel'
 import OrderShow from './components/admin/order/Show'
 import ShowShipped from './components/admin/shipped/ShowShipped'
 import ShowNewsletter from './components/admin/newsletter/ShowNewsletter'
+import ShowContact from './components/admin/contact/ShowContact'
 
 
 
@@ -116,6 +117,12 @@ function App() {
               <Route path='/admin/newsletters' element={
                 <AdminRequireAuth>
                   <ShowNewsletter />
+                </AdminRequireAuth>
+              } />
+
+              <Route path='/admin/contacts' element={
+                <AdminRequireAuth>
+                  <ShowContact />
                 </AdminRequireAuth>
               } />
 

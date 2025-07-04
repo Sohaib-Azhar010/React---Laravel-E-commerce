@@ -74,7 +74,7 @@ const AdminLayout = ({ children }) => {
             </Link>
           </li>
           <li className="nav-item mb-2">
-            <Link to="" className="nav-link text-dark fw-semibold hover-effect">
+            <Link to="/admin/contacts" className="nav-link text-dark fw-semibold hover-effect">
               <i className="bi bi-envelope me-2"></i>Messages
             </Link>
           </li>

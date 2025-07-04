@@ -6,6 +6,7 @@ use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\SizeController;
 use App\Http\Controllers\admin\TempImageController;
+use App\Http\Controllers\Api\ContactController;
 use App\Http\Controllers\Api\OrderController;
 use App\Http\Controllers\ReviewController;
 use Illuminate\Http\Request;
@@ -41,9 +42,13 @@ Route::group(['milldeware' => 'auth:sanctum'], function () {
     Route::get('/shippeds', [OrderController::class, 'getShipped']);
     Route::get('/newsletters', [NewsletterController::class, 'index']);
     Route::delete('/newsletters/{id}', [NewsletterController::class, 'destroy']);
+    Route::get('/admin/contacts', [ContactController::class, 'index']);
+    Route::delete('/admin/contacts/{id}', [ContactController::class, 'destroy']);
+
+
+
 });
 
-
+Route::post('/contact', [ContactController::class, 'store']);
 Route::post('/newsletter', [NewsletterController::class, 'store']);
-
 Route::post('/order', [OrderController::class, 'store']);
